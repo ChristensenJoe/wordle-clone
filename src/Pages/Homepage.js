@@ -1,8 +1,11 @@
+import { Container } from '@mui/material'
 
-function Homepage() {
+function Homepage({setTheme}) {
 
     return (
-        <h1>Homepage</h1>
+        <Container>
+
+        </Container>
     )
 }
 

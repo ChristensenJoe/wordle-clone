@@ -1,12 +1,32 @@
-import { BrowserRouter as Router,
-Route,
-Switcher } from 'react-router-dom'
+import { useState } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom'
+import { ThemeProvider } from '@mui/material'
+
+import { LightTheme, DarkTheme } from './Themes/Themes'
+import Homepage from './Pages/Homepage'
 
 function App() {
-  return (
-    <Router>
+  const [theme, setTheme] = useState(DarkTheme)
 
-    </Router>
+  return (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Homepage
+                setTheme={setTheme}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
